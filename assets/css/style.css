@@ -1,0 +1,9 @@
+body {
+    margin-top: 2%;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #000 !important;
+    border-color: #000 !important;
+    margin-right: 1%;
+}
