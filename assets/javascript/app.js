@@ -11,7 +11,7 @@ $(document).ready(function() {
     function displayGifs() {
 
         var sport = $(this).attr('data-name');
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=LLE4Ks0CoMJkAZS9t3E4xR4k95Re7mhU&limit=10"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=LLE4Ks0CoMJkAZS9t3E4xR4k95Re7mhU&limit=10"
 
         $.ajax({
             url: queryURL,
@@ -19,7 +19,23 @@ $(document).ready(function() {
         }).then(function(response) {
 
             console.log(response);
-            
+
+            for (var i = 0; i<10; i++) {
+
+                // Create div to hold the topics
+                var topicDiv = $('<div class="topic">');
+
+                // Display static, non-animated gif
+                var image = response.data[i].images.fixed_height_still.url;
+                topicDiv.append('<img src="' + image + '">' + '<br>');
+
+                // Under every gif, display its rating (PG, G, so on).
+                var rating = response.data[i].rating;
+                topicDiv.append('Rating: ' + rating + '<br>' + '<br>');
+
+                $('#giphy-view').append(topicDiv);
+            }
+
         });
     }
 
@@ -31,17 +47,33 @@ $(document).ready(function() {
         // Use a loop that appends a button for each string in the array
         for (var i = 0; i<topics.length; i++) {
 
-            var buttons = $('<button type="button" class="btn btn-primary">' + topics[i] + '</button>');
-            buttons.appendTo('#buttons-view');
+            var button = $('<button type="button">');
+            button.addClass("btn btn-primary");
+            button.addClass("sport");
+            button.attr("data-name", topics[i]);
+            button.text(topics[i]);
+            $('#buttons-view').append(button);
         }
     }
+
+    $("#add-sport").on("click", function(event) {
+        event.preventDefault();
+
+        var sport = $('#sport-input').val().trim();
+
+        topics.push(sport);
+
+        generateButtons();
+    });
+
+    $(document).on("click", ".sport", displayGifs);
 
     generateButtons();
 
     // When the user clicks one of the still GIPHY images, the gif should animate. 
     // If the user clicks the gif again, it should stop playing.
 
-    // Under every gif, display its rating (PG, G, so on).
+
 
     // Add a form to your page takes the value from a user input box and adds it into your topics array.
     // make a function call that takes each topic in the array remakes the buttons on the page.
