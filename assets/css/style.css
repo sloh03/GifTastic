@@ -16,3 +16,12 @@ h1 {
 .submit {
     margin-top: 2%;
 }
+
+figure {
+    display: inline-block;
+}
+
+figure.floatLeft { 
+    float: left; 
+    margin: 4px; 
+}
