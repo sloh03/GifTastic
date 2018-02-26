@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     // Create array of strings, store in var 'topics'
     var topics = [
-        'Soccer', 'Swimming', 'Diving', 'Skiing',
+        'Soccer', 'Swimming', 'Diving',
         'Snowboarding', 'Surfing', 'Skateboarding', 'Tennis'
     ];
 
