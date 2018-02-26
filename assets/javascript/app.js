@@ -24,7 +24,7 @@ $(document).ready(function() {
             $('#giphy-view').empty();
 
             // Loop through 10 gifs to display their image and rating
-            for (var i = 0; i<10; i++) {
+            for (var i = 0; i<response.data.length; i++) {
 
                 // Create div to hold the topics
                 var topicDiv = $('<div class="topic">');
@@ -35,7 +35,7 @@ $(document).ready(function() {
                 var rating = response.data[i].rating;
                 topicDiv.append(
                     '<figure class="floatLeft">' + 
-                        '<img src="' + image + '">' +
+                        '<img class="gif" src="' + image + '">' +
                         '<figcaption>' + 'Rating: ' + rating + '</figcaption>' +
                     '</figure>' + '<br>'
                 );
@@ -89,6 +89,19 @@ $(document).ready(function() {
 
     // When the user clicks one of the still GIPHY images, the gif should animate. 
     // If the user clicks the gif again, it should stop playing.
+    $('body').on("click", '.gif', function() {
+        var src = $(this).attr('src');
+        if($(this).hasClass('playing')) {
+            // stop
+            $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+            $(this).removeClass('playing');
+        }
+        else {
+            // play
+            $(this).addClass('playing');
+            $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+        }
+    });
 
 });
 
