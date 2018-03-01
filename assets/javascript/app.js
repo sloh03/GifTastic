@@ -1,13 +1,9 @@
 $(document).ready(function() {
 
-    // Create array of strings, store in var 'topics'
-    var topics = [
-        'Soccer', 'Swimming', 'Diving',
-        'Snowboarding', 'Surfing', 'Skateboarding', 'Tennis'
-    ];
+    // Create array of strings to store in var 'topics'
+    var topics = ['Soccer', 'Swimming', 'Diving','Snowboarding', 'Surfing', 'Skateboarding', 'Tennis'];
 
-    // When a button is clicked, the page should grab 10 static, 
-    // non-animated gif images from the GIPHY API and place them on the page
+    // When a button is clicked, the page should grab 10 static, non-animated gif images from the GIPHY API and place them on the page
     function displayGifs() {
 
         // Access topic from button's 'data-name'
@@ -19,6 +15,8 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
+
+            console.log(response);
 
             // Clear gifs before loading more
             $('#giphy-view').empty();
@@ -104,18 +102,3 @@ $(document).ready(function() {
     });
 
 });
-
-// Create array of strings, store in var 'topics'
-// Take topics in array and create buttons in HTML
-    // Use a loop that appends a button for each string in the array
-
-// When a button is clicked, the page should grab 10 static, 
-// non-animated gif images from the GIPHY API and place them on the page
-
-// When the user clicks one of the still GIPHY images, the gif should animate. 
-// If the user clicks the gif again, it should stop playing.
-
-// Under every gif, display its rating (PG, G, so on).
-
-// Add a form to your page takes the value from a user input box and adds it into your topics array.
-// make a function call that takes each topic in the array remakes the buttons on the page.

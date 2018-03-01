@@ -1,3 +1,8 @@
+/*********************
+MAIN
+*********************/
+
+/* Background: https://www.toptal.com/designers/subtlepatterns/3px-tile/ */
 body {
     margin-top: 2%;
     background-image: url('px_by_Gre3g_@2X.png');
@@ -6,20 +11,28 @@ body {
     line-height: 2;
 }
 
+
+
+/*********************
+LEFT COLUMN
+*********************/
+
+/* Sports Gif Logo: http://www4.flamingtext.com/net-fu/jobs/25497623369595940.html */
 #logo {
     height: 80px;
     margin-bottom: 10%;
     margin-left: -7px;
 }
 
+/* Instructions */
 h4 {
     margin-top: 0;
     margin-bottom: 5%;
     line-height: 1.5;
 }
 
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+/* Buttons */
+.btn-primary, .btn-primary:active, .btn-primary:visited {
     background-color: #D3D3D3 !important;
     border-color: #D3D3D3 !important;
     color:#000 !important;
@@ -28,10 +41,27 @@ h4 {
     margin-bottom: 3%;
 }
 
-.submit {
-    margin-top: 2%;
+.btn-primary:hover {
+    background-color: #bdbdbd!important;
 }
 
+.submit {
+    margin-top: 3%;
+}
+
+
+
+/*********************
+RIGHT COLUMN
+*********************/
+
+/* Instructions */
+#empty {
+    margin-top: 25%;
+    color: #a8a8a8;
+}
+
+/* Gifs and caption */
 figure {
     display: inline-block;
 }
@@ -39,4 +69,8 @@ figure {
 figure.floatLeft { 
     float: left; 
     margin: 4px; 
+}
+
+.topic {
+    float: left;
 }
