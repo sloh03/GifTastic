@@ -1,6 +1,6 @@
 # GifTastic
 
-## [LIVE DEMO](https://sloh03.github.io/GifTastic/index)
+## [LIVE DEMO](https://sloh03.github.io/gif-tastic/)
 
 ## Search through Sports GIFs!
 Click a category to see the current top 10 most popular giphy's of that category. (The rating of the GIF can be seen under the GIF.) Click on the still image to play or stop playing. To create a new category, enter sport of choice into the textbox and click 'Add a Category'. The new category can then be accessed through the new button labeled with the sport of choice.
